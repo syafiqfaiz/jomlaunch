@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
-  before_action :set_user, only: [:new, :edit, :create]
+  before_action :set_user, only: [:new, :edit, :create, :index]
 
   # GET /projects
   # GET /projects.json
@@ -70,7 +70,7 @@ class ProjectsController < ApplicationController
 
     def set_user
       if session[:user_id] == nil 
-        redirect_to '/login'
+        redirect_to '/login', alert: "You need to login first."
       else
         @user = User.find(session[:user_id])
       end
