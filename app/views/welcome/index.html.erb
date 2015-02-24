@@ -46,3 +46,25 @@
         <!-- /.container -->
 
     </div>
+        <div class="content-section-b">
+
+        <div class="container">
+
+            <div class="row">
+	            <% @projects.each_slice(3) do |projects|%>	
+	            	<%projects.each do |project| %>
+		                <div class="col-sm-4">
+		                    <div class="box effect1">
+								<h3><%=project.project_name %></h3>
+								<p><%= project.description %></p>
+							</div>
+		                </div>
+		            <%end%>
+	            <%end%>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-b -->
