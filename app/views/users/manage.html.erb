@@ -1,0 +1,41 @@
+
+<h1>Manage account</h1>
+
+
+<h1>Listing projects</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Project name</th>
+      <th>Brief description</th>
+      <th>Description</th>
+      <th>Web link</th>
+      <th>Email</th>
+      <th>Company name</th>
+      <th>Team members</th>
+      <th>Social media link</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @projects.each do |project| %>
+      <tr>
+        <td><%= project.project_name %></td>
+        <td><%= project.brief_description %></td>
+        <td><%= project.description %></td>
+        <td><%= project.web_link %></td>
+        <td><%= project.email %></td>
+        <td><%= project.company_name %></td>
+        <td><%= project.team_members %></td>
+        <td><%= project.social_media_link %></td>
+        <td><%= link_to 'Show', project %></td>
+        <td><%= link_to 'Edit', edit_project_path(project) %></td>
+        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

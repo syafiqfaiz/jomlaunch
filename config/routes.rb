@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get '/logging_in', to: 'users#logging_in'
   get '/logout', to: 'users#logout'
 
+  get '/manage', to: 'users#manage'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

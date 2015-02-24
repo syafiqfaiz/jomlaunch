@@ -23,27 +23,15 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                   <% if request.original_url.to_s == "http://localhost:3000/" %> 
-                        <li>
-                            <a href="#about">About</a>
-                        </li>
-                        <li>
-                            <a href="#projects">Projects</a>
-                        </li>
-                        <li>
-                            <a href="#contact">Contact</a>
-                        </li>
-                    <%else%>
-                           <li>
-                            <a href="http://localhost:3000/#about">About</a>
-                        </li>
-                        <li>
-                            <a href="http://localhost:3000/#projects">Projects</a>
-                        </li>
-                        <li>
-                            <a href="http://localhost:3000/#contact">Contact</a>
-                        </li>
-                    <%end%>
+                    <li>
+                        <a href="/#about">About</a>
+                    </li>
+                    <li>
+                        <a href="/#projects">Projects</a>
+                    </li>
+                    <li>
+                        <a href="/#contact">Contact</a>
+                    </li>
                     <% if session[:user_id] == nil %>
                         <li>
                             <a href="/users/new">Sign in</a>

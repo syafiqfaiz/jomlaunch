@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :manage]
   # before_action :authenticate, only: [:edit, :update, :destroy, :create]
 
   # GET /users
@@ -84,10 +84,15 @@ class UsersController < ApplicationController
     redirect_to '/', notice: 'successfully logout'
   end
 
+  #manage profile
+  def manage
+    @projects =Project.where(user_id: session[:user_id])
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      @user = User.find(params[:id])
+      @user = User.find(session[:user_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
