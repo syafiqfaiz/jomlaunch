@@ -64,23 +64,24 @@ class UsersController < ApplicationController
 
   # user login
   def login
+    session = nil
   end
 
   def logging_in
     user = User.authenticate(params[:email], params[:password])
-    byebug
     if user
       session[:user_id] = user.id
-      redirect_to '/'
+      redirect_to '/', notice: 'successfully login'
     else
-      redirect_to '/login'
+      redirect_to '/login', notice: "Login failed."
     end
   end
 
   # user logout
   def logout
     session[:user_id] = nil
-    redirect_to '/'
+    # reset_session
+    redirect_to '/', notice: 'successfully logout'
   end
 
   private
