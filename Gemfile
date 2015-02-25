@@ -34,6 +34,9 @@ gem 'byebug'
 #use devise for user crud
 gem 'devise'
 
+#omniaut-github
+gem "omniauth-github"
+
 #heroku
 gem 'rails_12factor', group: :production
 

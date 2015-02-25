@@ -1,104 +1,102 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Jomlaunch</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-    <!-- Navigation -->
+  <head>
+    <title>Jomlaunch</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+      <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
-        <div class="container topnav">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand topnav" href="/">Jom Launch</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="/#about">About</a>
-                    </li>
-                    <li>
-                        <a href="/#projects">Projects</a>
-                    </li>
-                    <li>
-                        <a href="/#contact">Contact</a>
-                    </li>
-                    <% if user_signed_in? == false %>
-                        <li>
-                            <a href="/users/sign_up">Sign up</a>
-                        </li>
-                        <li>
-                            <a href="/users/sign_in">Login</a>
-                        </li>
-                    <%else%>
-                        <li>
-                            <p><%=current_user.email%></p>
-                        </li>
-                        <li>
-                            <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-                        </li>
-                         <li>
-                            <a href="/manage">Manage</a>
-                        </li>
-                    <%end%>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
+      <div class="container topnav">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand topnav" href="/">Jom Launch</a>
         </div>
-        <!-- /.container -->
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="/#about">About</a>
+            </li>
+            <li>
+              <a href="/#projects">Projects</a>
+            </li>
+            <li>
+              <a href="/#contact">Contact</a>
+            </li>
+            <% if user_signed_in? == false %>
+              <li>
+                  <a href="/users/sign_up">Sign up</a>
+              </li>
+              <li>
+                  <a href="/users/sign_in">Login</a>
+                  <%= link_to "Sign in with Github", user_omniauth_authorize_path(:github) %>
+              </li>
+            <%else%>
+              <li>
+                <p><%=current_user.email%></p>
+              </li>
+              <li>
+                <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+              </li>
+              <li>
+                <a href="/manage">Manage</a>
+              </li>
+            <%end%>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+          <!-- /.container -->
     </nav>
 
-<div class="container" style="padding-top: 50px">	
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-	<%= yield %>
-</div>
-
-
-</body>
+    <div class="container" style="padding-top: 50px">	
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    	<%= yield %>
+    </div>
+  </body>
 
     <!-- Footer -->
-    <footer>
-        <div class="container" id="contact" >
-            <div class="row">
-                <div class="col-lg-5 col-sm-6">
-                    <hr class="section-heading-spacer">
-                    <div class="clearfix"></div>
-                    <h2 class="section-heading">The project is <br>bla bla bla.</h2>
-                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam voluptatem iure obcaecati delectus laboriosam pariatur reiciendis, architecto, atque quisquam repellat rem nostrum eaque commodi voluptate repellendus itaque, dolorum consectetur voluptates.</p>
-                </div>
-                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <h1 style="padding-top:60px" >Contact form in here.</h1>
-                </div>
-                <div class="col-lg-12">
-                    <div class="sponsor text-center" ><%= image_tag("JOM.png") %></div>
-                    <hr class="intro-divider">
-                    <ul class="list-inline">
-                        <li>
-                            <a href="#">Home</a>
-                        </li>
-                        <li class="footer-menu-divider">&sdot;</li>
-                        <li>
-                            <a href="#about">About</a>
-                        </li>
-                        <li class="footer-menu-divider">&sdot;</li>
-                        <li>
-                            <a href="#contact">Contact</a>
-                        </li>
-                    </ul>
-                    <p class="copyright text-muted small">Copyright &copy; JomLaunch 2014. All Rights Reserved</p>
-                </div>
-            </div>
+  <footer>
+    <div class="container" id="contact" >
+      <div class="row">
+        <div class="col-lg-5 col-sm-6">
+          <hr class="section-heading-spacer">
+          <div class="clearfix"></div>
+          <h2 class="section-heading">The project is <br>bla bla bla.</h2>
+          <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam voluptatem iure obcaecati delectus laboriosam pariatur reiciendis, architecto, atque quisquam repellat rem nostrum eaque commodi voluptate repellendus itaque, dolorum consectetur voluptates.</p>
         </div>
-    </footer>
-
+        <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+          <h1 style="padding-top:60px" >Contact form in here.</h1>
+        </div>
+        <div class="col-lg-12">
+          <div class="sponsor text-center" ><%= image_tag("JOM.png") %></div>
+          <hr class="intro-divider">
+          <ul class="list-inline">
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <li class="footer-menu-divider">&sdot;</li>
+            <li>
+              <a href="#about">About</a>
+            </li>
+            <li class="footer-menu-divider">&sdot;</li>
+            <li>
+              <a href="#contact">Contact</a>
+            </li>
+          </ul>
+          <p class="copyright text-muted small">Copyright &copy; JomLaunch 2014. All Rights Reserved</p>
+        </div>
+      </div>
+    </div>
+  </footer>
 </html>
