@@ -32,19 +32,19 @@
                     <li>
                         <a href="/#contact">Contact</a>
                     </li>
-                    <% if session[:user_id] == nil %>
+                    <% if user_signed_in? == false %>
                         <li>
-                            <a href="/users/new">Sign in</a>
+                            <a href="/users/sign_up">Sign up</a>
                         </li>
                         <li>
-                            <a href="/login">Login</a>
+                            <a href="/users/sign_in">Login</a>
                         </li>
                     <%else%>
                         <li>
-                            <p><%=@user.email%></p>
+                            <p><%=current_user.email%></p>
                         </li>
                         <li>
-                            <a href="/logout">Logout</a>
+                            <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
                         </li>
                          <li>
                             <a href="/manage">Manage</a>
