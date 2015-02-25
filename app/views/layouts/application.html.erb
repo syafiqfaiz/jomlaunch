@@ -37,7 +37,7 @@
                             <a href="/users/new">Sign in</a>
                         </li>
                         <li>
-                            <a href="/login">Login in</a>
+                            <a href="/login">Login</a>
                         </li>
                     <%else%>
                         <li>
@@ -58,6 +58,8 @@
     </nav>
 
 <div class="container" style="padding-top: 50px">	
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 	<%= yield %>
 </div>
 

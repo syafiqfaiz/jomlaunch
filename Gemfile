@@ -31,6 +31,9 @@ gem 'spring',        group: :development
 #debugging
 gem 'byebug'
 
+#use devise for user crud
+gem 'devise'
+
 #heroku
 gem 'rails_12factor', group: :production
 
