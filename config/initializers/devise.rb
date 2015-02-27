@@ -258,5 +258,5 @@ Devise.setup do |config|
   # config.omniauth_path_prefix = '/my_engine/users/auth'
 
   #omniauth github
-  config.omniauth :github, ENV['GITHUB_KEY'], ENV['GITHUB_SECRET'], scope: "user, public_repo"
+  config.omniauth :github, "28693babdc7d591013cd", "2820330ba2e933ba990cd33f858ac42fbb8cfbcb"
 end

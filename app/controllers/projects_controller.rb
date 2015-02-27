@@ -69,10 +69,10 @@ class ProjectsController < ApplicationController
     end
 
     def set_user
-      if session[:user_id] == nil 
-        redirect_to '/login', alert: "You need to login first."
+      if user_signed_in? == false
+        redirect_to '/users/sign_in', alert: "You need to login first."
       else
-        @user = User.find(session[:user_id])
+        @user = current_user
       end
     end
 
