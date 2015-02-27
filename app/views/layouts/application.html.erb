@@ -49,12 +49,13 @@
                 </a>
                 <ul class="dropdown-menu" role="menu">
                   <li>
-                    <a href="/users/sign_out">Sign out</a>
+                    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
                   </li>
                   <li>
                     <a href="/users/manage">Manage</a>
                   </li>
                 </ul>
+              </li>
             <%end%>
           </ul>
         </div>
