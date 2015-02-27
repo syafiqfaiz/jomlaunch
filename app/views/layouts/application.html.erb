@@ -33,14 +33,20 @@
               <a href="/#contact">Contact</a>
             </li>
             <% if user_signed_in? == false %>
-              <li>
-                  <a href="/users/sign_up">Sign up</a>
-              </li>
-              <li>
-                <a href="/users/sign_in">Login</a>
-              </li>
-              <li>
-                <%= link_to "Sign in with Github", user_omniauth_authorize_path(:github) %>
+              <li role="presentation" class="dropdown">
+                <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="navLogin">Login</a>
+                <div class="dropdown-menu" style="padding:17px;">
+                  <%= form_for(:user, :url => session_path(:user)) do |f| %>
+                    <%= f.text_field :email %>
+                    <%= f.password_field :password %>
+                    <%= f.check_box :remember_me %>
+                    <%= f.label :remember_me %>
+                    <%= f.submit 'Sign in' %> <br>
+                    <%= link_to "Forgot your password?", new_password_path(:user) %>
+                  <% end %>
+                  <a href="/users/sign_up">Sign up</a><br>
+                  <%= link_to "Sign in with Github", user_omniauth_authorize_path(:github) %>
+                </div>
               </li>
             <%else%>
               <li role="presentation" class="dropdown">
