@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:github]
   has_many :projects
+	validates :email, :encrypted_password, presence: true
+	validates :email, uniqueness: true
 
 
   def self.create_with_omniauth(auth)
