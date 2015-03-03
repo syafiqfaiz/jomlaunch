@@ -1,5 +1,5 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-	
+	protect_from_forgery with: :null_session
 	def github
     # You need to implement the method below in your model (e.g. app/models/user.rb)
     byebug
