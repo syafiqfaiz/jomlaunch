@@ -35,7 +35,8 @@ gem 'byebug'
 gem 'devise'
 
 #omniaut-github
-gem "omniauth-github", '1.1.2'
+gem "omniauth"
+gem "omniauth-github"
 
 #heroku
 gem 'rails_12factor', group: :production
