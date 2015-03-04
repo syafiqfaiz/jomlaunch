@@ -44,8 +44,7 @@
                     <%= f.submit 'Sign in' %> <br>
                     <%= link_to "Forgot your password?", new_password_path(:user) %>
                   <% end %>
-                  <a href="/users/sign_up">Sign up</a><br>
-                  <%= link_to "Sign in with Github", user_omniauth_authorize_path(:github) %>
+                  <a href="/users/sign_up">Sign up</a>
                 </div>
               </li>
             <%else%>
@@ -71,7 +70,7 @@
     </nav>
 
 
-    <div class="container" style="padding-top: 50px">	
+    <div class="container-fluid" style="padding-top: 50px">	
       <% if notice.nil? == false %><p class="alert alert-success"><%= notice %></p><% end %>
       <% if alert.nil? == false %><p class="alert alert-danger"><%= alert %></p><% end %>
     	<%= yield %>

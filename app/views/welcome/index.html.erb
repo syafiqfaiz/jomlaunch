@@ -30,7 +30,7 @@
     <div class="content-section-a">
 
         <div class="container">
-        	<div class="featured_box effect1">
+        	<div class="featured_box">
 	            <div class="row">
 	                <div class="col-lg-5 col-sm-6">
 	                    <hr class="section-heading-spacer">
@@ -56,9 +56,11 @@
 	            <% @projects.each_slice(3) do |projects|%>	
 	            	<%projects.each do |project| %>
 		                <div class="col-sm-4">
-		                    <div class="box effect1">
-								<h3><%=project.project_name %></h3>
-								<p><%= project.description %></p>
+		                    <div class="box1">
+								<h3><%=project.project_name.capitalize %></h3>
+								<p><%= project.brief_description.capitalize %></p>
+                                <p><%= project.description.capitalize %></p>
+                                <a href="<%= project.web_link %>"><%= project.web_link %></a>
 							</div>
 		                </div>
 		            <%end%>
