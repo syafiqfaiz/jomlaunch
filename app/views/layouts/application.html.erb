@@ -69,16 +69,10 @@
           <!-- /.container -->
     </nav>
 
-
-    <div class="container-fluid" style="padding-top: 50px">	
       <% if notice.nil? == false %><p class="alert alert-success"><%= notice %></p><% end %>
       <% if alert.nil? == false %><p class="alert alert-danger"><%= alert %></p><% end %>
     	<%= yield %>
-    </div>
-
-
-  
-
+ 
     <!-- Footer -->
   <footer>
     <div class="container" id="contact" >
