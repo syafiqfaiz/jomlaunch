@@ -1,44 +1,46 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Project name:</strong>
-  <%= @project.project_name %>
-</p>
+  <p>
+    <strong>Project name:</strong>
+    <%= @project.project_name %>
+  </p>
 
-<p>
-  <strong>Brief description:</strong>
-  <%= @project.brief_description %>
-</p>
+  <p>
+    <strong>Brief description:</strong>
+    <%= @project.brief_description %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @project.description %>
+  </p>
 
-<p>
-  <strong>Web link:</strong>
-  <%= @project.web_link %>
-</p>
+  <p>
+    <strong>Web link:</strong>
+    <%= @project.web_link %>
+  </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @project.email %>
-</p>
+  <p>
+    <strong>Email:</strong>
+    <%= @project.email %>
+  </p>
 
-<p>
-  <strong>Company name:</strong>
-  <%= @project.company_name %>
-</p>
+  <p>
+    <strong>Company name:</strong>
+    <%= @project.company_name %>
+  </p>
 
-<p>
-  <strong>Team members:</strong>
-  <%= @project.team_members %>
-</p>
+  <p>
+    <strong>Team members:</strong>
+    <%= @project.team_members %>
+  </p>
 
-<p>
-  <strong>Social media link:</strong>
-  <%= @project.social_media_link %>
-</p>
+  <p>
+    <strong>Social media link:</strong>
+    <%= @project.social_media_link %>
+  </p>
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+  <%= link_to 'Edit', edit_project_path(@project) %> |
+  <%= link_to 'Back', projects_path %>
+</div>
