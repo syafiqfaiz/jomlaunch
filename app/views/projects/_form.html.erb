@@ -1,5 +1,5 @@
 
-<%= form_for(@project) do |f| %>
+<%= bootstrap_form_for(@project, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-6") do |f| %>
   <% if @project.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
@@ -13,38 +13,31 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :project_name %><br>
     <%= f.text_field :project_name %>
   </div>
-  <div class="field">
-    <%= f.label :brief_description %><br>
+  <div class="field"> 
     <%= f.text_field :brief_description %>
   </div>
   <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
+    <%= f.text_area :description, size: "24x6" %>
   </div>
   <div class="field">
-    <%= f.label :web_link %><br>
     <%= f.text_field :web_link %>
   </div>
   <div class="field">
-    <%= f.label :email %><br>
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :company_name %><br>
     <%= f.text_field :company_name %>
   </div>
   <div class="field">
-    <%= f.label :team_members %><br>
     <%= f.text_field :team_members %>
   </div>
-  <div class="field">
-    <%= f.label :social_media_link %><br>
+  <div class="field"> 
     <%= f.text_field :social_media_link %>
   </div>
-  <div class="actions">
+  <div class="actions col-md-3 col-md-offset-3">
     <%= f.submit %>
   </div>
 <% end %>
+<br>
