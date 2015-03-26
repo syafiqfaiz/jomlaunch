@@ -11,23 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150304095204) do
+ActiveRecord::Schema.define(version: 20150326102946) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "projects", force: true do |t|
-    t.string   "project_name",                   null: false
-    t.string   "brief_description",              null: false
-    t.string   "description",                    null: false
-    t.string   "web_link",                       null: false
-    t.string   "email",                          null: false
+    t.string   "project_name",      null: false
+    t.string   "brief_description", null: false
+    t.string   "description",       null: false
+    t.string   "web_link",          null: false
+    t.string   "email",             null: false
     t.string   "company_name"
     t.string   "social_media_link"
-    t.integer  "user_id",                        null: false
+    t.integer  "user_id",           null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "team_members",      default: [],              array: true
+    t.string   "team_members"
   end
 
   create_table "users", force: true do |t|
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20150304095204) do
     t.datetime "updated_at"
     t.string   "provider"
     t.string   "uid"
+    t.integer  "phone_number"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree

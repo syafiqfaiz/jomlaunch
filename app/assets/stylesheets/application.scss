@@ -235,3 +235,47 @@ p.copyright {
     width: 100%;
     margin-top: 15px;
 }
+h2.login{
+    text-align: center;
+  }
+
+
+
+* {
+margin: 0;
+}
+
+html, body {
+height: 100%;
+}
+
+.wrapper {
+min-height: 100%;
+height: auto !important;
+height: 100%;
+margin: 0 auto -4em;
+}
+
+.footer, .push {
+height: 4em;
+padding-top:70px;
+}
+
+
+div.sponsor{
+    img{
+    max-height: 60px;
+    :first-child{
+        margin-right: 5px
+    }
+    :last-child{
+        margin-left: 5px
+    }
+    }
+}
+
+
+
+
+
+

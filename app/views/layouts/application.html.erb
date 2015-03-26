@@ -26,12 +26,6 @@
             <li>
               <a href="/#about">About</a>
             </li>
-            <li>
-              <a href="/#projects">Projects</a>
-            </li>
-            <li>
-              <a href="/#contact">Contact</a>
-            </li>
             <% if user_signed_in? == false %>
               <li role="presentation" class="dropdown">
                 <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="navLogin">Login</a>
@@ -71,43 +65,26 @@
 
 
     <div  style="padding-top: 50px"></div>
-
+    <div class="wrapper">
       <% if notice.nil? == false %><p class="alert alert-success"><%= notice %></p><% end %>
       <% if alert.nil? == false %><p class="alert alert-danger"><%= alert %></p><% end %>
     	<%= yield %>
+      
+    </div>
 
     <!-- Footer -->
-  <footer>
-    <div class="container" id="contact" >
+    <div class="col-xs-4 col-xs-offset-4 footer" >
       <div class="row">
-        <div class="col-lg-5 col-sm-6">
-          <hr class="section-heading-spacer">
-          <div class="clearfix"></div>
-          <h2 class="section-heading">The project is <br>bla bla bla.</h2>
-          <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam voluptatem iure obcaecati delectus laboriosam pariatur reiciendis, architecto, atque quisquam repellat rem nostrum eaque commodi voluptate repellendus itaque, dolorum consectetur voluptates.</p>
-        </div>
-        <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-          <h1 style="padding-top:60px" >Contact form in here.</h1>
-        </div>
         <div class="col-lg-12">
-          <div class="sponsor text-center" ><%= image_tag("JOM.png") %></div>
+          <div class="sponsor text-center" ><%= image_tag("JOM.png", :align=> "bottom") %><%= image_tag("training_my.png", :align=> "bottom") %><%= image_tag("terrato.png", :align=> "bottom") %></div>
           <hr class="intro-divider">
           <ul class="list-inline">
-            <li>
-              <a href="#">Home</a>
-            </li>
             <li class="footer-menu-divider">&sdot;</li>
             <li>
-              <a href="#about">About</a>
-            </li>
-            <li class="footer-menu-divider">&sdot;</li>
-            <li>
-              <a href="#contact">Contact</a>
+              <p class="copyright text-muted small">Copyright &copy; JomLaunch 2015. All Rights Reserved</p>
             </li>
           </ul>
-          <p class="copyright text-muted small">Copyright &copy; JomLaunch 2014. All Rights Reserved</p>
         </div>
       </div>
     </div>
-  </footer>
 </html>
