@@ -29,12 +29,11 @@
             <% if user_signed_in? == false %>
               <li role="presentation" class="dropdown">
                 <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="navLogin">Login</a>
-                <div class="dropdown-menu" style="padding:17px;">
-                  <%= form_for(:user, :url => session_path(:user)) do |f| %>
-                    <%= f.text_field :email %>
-                    <%= f.password_field :password %>
+                <div class="dropdown-menu" style="padding:17px; min-width:230px">
+                  <%= bootstrap_form_for(:user, :url => session_path(:user)) do |f| %>
+                    <%= f.text_field :email, hide_label: true, placeholder: "Email"  %>
+                    <%= f.password_field :password, hide_label: true, placeholder: "Password"  %>
                     <%= f.check_box :remember_me %>
-                    <%= f.label :remember_me %>
                     <%= f.submit 'Sign in' %> 
                     <hr>
                     <%= link_to "Forgot your password?", new_password_path(:user) %>
