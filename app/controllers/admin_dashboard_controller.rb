@@ -12,7 +12,7 @@ class AdminDashboardController < ApplicationController
   
   def authorize
   	admin = ENV['ADMIN'].split(',')
-  	if admin.include? current_user.email
+  	if (user_signed_in? && admin.include?( current_user.email))
   		true
   	else
   		redirect_to root_path, notice: "You are not authorized to acces Admin Dashboard"
