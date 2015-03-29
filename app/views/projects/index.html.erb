@@ -1,7 +1,7 @@
 <div class="container">
   <h1>Listing projects</h1>
 
-  <table>
+  <table class="table table-striped">
     <thead>
       <tr>
         <th>Project name</th>
@@ -19,13 +19,13 @@
     <tbody>
       <% @projects.each do |project| %>
         <tr>
-          <td><%= project.project_name %></td>
-          <td><%= project.brief_description %></td>
-          <td><%= project.description %></td>
+          <td><%= project.project_name.capitalize %></td>
+          <td><%= project.brief_description.capitalize %></td>
+          <td><%= project.description.capitalize %></td>
           <td><%= project.web_link %></td>
           <td><%= project.email %></td>
-          <td><%= project.company_name %></td>
-          <td><%= project.team_members %></td>
+          <td><%= project.company_name.capitalize %></td>
+          <td><%= project.team_members.capitalize %></td>
           <td><%= project.social_media_link %></td>
           <td><%= link_to 'Show', project %></td>
           <td><%= link_to 'Edit', edit_project_path(project) %></td>

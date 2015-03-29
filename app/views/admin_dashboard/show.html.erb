@@ -1,0 +1,54 @@
+<div class="container">
+	<div class="col-md-10 col-md-offset-1">	
+		
+	<div class="container">
+	  <p id="notice"><%= notice %></p>
+
+	  <p>
+	    <strong>Project name:</strong>
+	    <%= @project.project_name.capitalize %>
+	  </p>
+
+	  <p>
+	    <strong>Brief description:</strong>
+	    <%= @project.brief_description.capitalize %>
+	  </p>
+
+	  <p>
+	    <strong>Description:</strong>
+	    <%= @project.description.capitalize %>
+	  </p>
+
+	  <p>
+	    <strong>Web link:</strong>
+	    <%= @project.web_link %>
+	  </p>
+
+	  <p>
+	    <strong>Email:</strong>
+	    <%= @project.email %>
+	  </p>
+
+	  <p>
+	    <strong>Company name:</strong>
+	    <%= @project.company_name.capitalize %>
+	  </p>
+
+	  <p>
+	    <strong>Team members:</strong>
+	    <ol>
+				<% @project.team_members.split(",").each do |member| %>
+					<li><%=member.capitalize  %></li>
+				<% end %>
+			</ol>
+	  </p>
+
+	  <p>
+	    <strong>Social media link:</strong>
+	    <%= @project.social_media_link %>
+	  </p>
+
+	  <%= link_to 'Edit', edit_project_path(@project) %> |
+	  <%= link_to 'Back', projects_path %>
+	</div>
+</div>

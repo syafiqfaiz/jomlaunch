@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'dashboard' => 'admin_dashboard#index'
+
+  get 'dashboard/show/:project_id' => 'admin_dashboard#show'
+
   devise_for :users
   resources :projects
 
