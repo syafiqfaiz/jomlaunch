@@ -72,8 +72,9 @@
       <div class="container">
         <% if notice.nil? == false %><p class="alert alert-success"><%= notice %></p><% end %>
         <% if alert.nil? == false %><p class="alert alert-danger"><%= alert %></p><% end %>
+      </div>  
       	<%= yield %>
-      </div>      
+         
     </div>
     <div style="padding:50px"></div>
 
